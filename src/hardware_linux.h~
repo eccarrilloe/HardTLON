@@ -8,4 +8,6 @@
 	void getMemoryInformation();
 	void getDisplayInformation();
 	void getHardDiskInformation();
+
+	char* getProcessorName(SYSTEM_INFO sys);
 #endif
