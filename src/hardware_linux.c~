@@ -1,8 +1,9 @@
-#include "hardware_linux.h"/
+#include "hardware_linux.h"
 struct sysinfo si;
 
 void getProcessorInformation()
 {
+	// The Linux kernel has a sysinfo() system call since 0.98.pl6.
 	sysinfo (&si);
 	/*
 	printf ("system uptime : %ld days, %ld:%02ld:%02ld\n", 
@@ -12,10 +13,15 @@ void getProcessorInformation()
 	printf("Number of precessors availables: %d\n", get_nprocs());
 }
 
+
 void getMemoryInformation()
 {
 	double mb = 1048576;
-	printf("total Free RAM %.3f MB\n", si.totalram / mb);
+	printf("Total usable main Memory size %.5f MB\n", si.totalram / mb);
+	printf("Available Memory size %.5f MB\n", si.freeram / mb);
+	printf("Amount of shared memory %.5f MB\n", si.sharedram / mb);
+	printf("Memory used by buffers %.5f MB\n", si.bufferram / mb);
+	printf("Total swap space size %.5f MB\n", si.totalswap / mb);
 }
 
 void getDisplayInformation(){}
