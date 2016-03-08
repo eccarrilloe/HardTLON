@@ -4,7 +4,7 @@
     /**
      *
      * CPU Information
-     * Windows: Getting from WMIC cpu
+     * Windows: ....
      * Linux: ....
      *
      */
@@ -19,7 +19,7 @@
     /**
      *
      * Monitor Information
-     * Windows: Getting from WMIC desktopmonitor
+     * Windows: ....
      * Linux: ....
      *
      */
@@ -33,8 +33,8 @@
     /**
      *
      * Physical Hard Drives
-     * Windows: Getting from WMIC driskdrive
-     * Linux: ....
+     * Windows: ....
+     * Linux: .....
      *
      */
     typedef struct {
@@ -49,8 +49,8 @@
     /**
      *
      * Logical Partitions Information
-     * Windows: Getting from WMIC partition
-     * Linux: ....
+     * Windows: ....
+     * Linux: .....
      *
      */
     typedef struct {
@@ -62,7 +62,7 @@
     /**
      *
      * RAM Information
-     * Windows: Getting from WMIC os
+     * Windows: ....
      * Linux: ....
      */
     typedef struct {
@@ -78,7 +78,7 @@
     /**
      *
      * RAM Chip Information
-     * Windows: Getting from WMIC memorychip
+     * Windows: ....
      * Linux: ....
      */
     typedef struct {
@@ -89,8 +89,22 @@
 
     /**
      *
+     * OS Information
+     * Windows: ....
+     * Linux: ....
+     *
+     */
+     typedef struct  {
+        char *osName;
+        int osArchitecture;
+        char *osUsername;
+        int osNumberOfProccess;
+     } OSInfo;
+
+    /**
+     *
      * Battery Information
-     * Windows:
+     * Windows: ....
      * Linux: ....
      *
      */
@@ -99,5 +113,19 @@
         int batteryLifeTime;
         double batteryLifePercent;
      } BatteryInfo;
+
+     /**
+     *
+     * Devices Information
+     * Windows: ....
+     * Linux: ....
+     *
+     */
+     typedef struct  {
+        long int deviceId;
+        char *deviceCaption;
+        char *deviceType;
+        char *deviceDescription;
+     } DeviceInfo;
 
 #endif
